@@ -1,0 +1,53 @@
+.sentence {
+    font-size: 35px;
+    color: #222;
+    line-height: 1.5;
+}
+
+.tab {
+    font-size: 18px;
+}
+
+.activetab {
+    font-size: 20px;
+}
+
+.activesentence {
+    font-size: 72px;
+}
+
+.connect {
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .sentence {
+        font-size: 22px;
+    }
+    .activesentence {
+        font-size: 68px;
+    }
+    .tab {
+        font-size: 12px;
+    }
+    .activetab {
+        font-size: 14px;
+    }
+    .acconn {
+        padding: 0 0 40%;
+    }
+}
+
+body {
+    line-height: 1.5;
+}
+
+.acconn {
+    height: 80%;
+}

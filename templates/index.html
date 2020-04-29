@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
+    <script
+        type="text/javascript">$youziku.load(".font-JzF", "cb2a44ac71394d759765c95b877632e6", "HanWangFangSongLight"), $youziku.load(".font-TSS", "41062e1fb53b4030b0581b0560d122df", "TSSunOld"), $youziku.load(".font-hdj", "41062e1fb53b4030b0581b0560d122df", "TSSunOld"), $youziku.draw()</script>
+    <link rel="stylesheet" type="text/css" href="static/index.css" />
+    <title> 闲言碎语 | 橘年 </title>
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <style>
+        ::selection {
+            background: #262a30;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section active">
+            <div class="connect acconn">
+                <div class="font-JzF activesentence">闲言碎语</div>
+                <br>
+                <div class="font-TSS activetab">{{.title}}</div>
+            </div>
+            <div style="position:absolute;height:10%;bottom: 0px;left: 50%;transform: translateX(-50%);" id="xiayClick">
+                <img src="static/1.png"></div>
+        </div>
+
+        {{range .result}}
+
+        <div class="section">
+            <div class="connect">
+                <div class="font-hdj sentence">{{.Title}}</div>
+                <br>
+                <div class="font-TSS tab">{{.Content}}</div>
+            </div>
+        </div>
+
+        {{end}}
+        <div class="section">
+            <div class="connect">
+                <div class="font-hdj sentence">我以為長大之後就不再是個廢物</div>
+                <br>
+                <div class="font-TSS tab">来自廢物</div>
+            </div>
+            <div class="font-TSS tab"
+                style="position:absolute;height:10%;bottom: 0px;left: 50%;transform: translateX(-50%);">
+                #END#</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', { loopBottom: true });
+        var btn = document.getElementById("xiayClick");
+        btn.addEventListener('click', function () {
+            fullpage_api.moveSectionDown();
+        });
+        var classSum = document.getElementsByClassName("sentence");
+        for (let i = 0; i < classSum.length; i++) {
+            const element = classSum[i];
+            if (element.innerHTML.indexOf("<br>") != -1) {
+                element.style["text-align"] = "left"
+            }
+        }
+    </script>
+</body>
+
+</html>
