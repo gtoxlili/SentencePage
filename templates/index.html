@@ -63,6 +63,7 @@
         var classSum = document.getElementsByClassName("sentence");
         for (let i = 0; i < classSum.length; i++) {
             const element = classSum[i];
+            element.innerHTML = element.innerHTML.replace(/<br>$/, "")
             if (element.innerHTML.indexOf("<br>") != -1) {
                 element.style["text-align"] = "left"
             }
